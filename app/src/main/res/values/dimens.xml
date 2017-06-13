@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_item_height">50dp</dimen>
+    <dimen name="dp30">30dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp2">2dp</dimen>
+    <dimen name="sp25">25sp</dimen>
+    <dimen name="dp250">250dp</dimen>
+</resources>
