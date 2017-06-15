@@ -124,10 +124,10 @@ public class DetailsFragment extends Fragment {
                 email.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                                "mailTo:", productEmail, null));
+                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order " + productTitle);
                         emailIntent.putExtra(Intent.EXTRA_TEXT, "Order of " + productTitle);
+                        emailIntent.setData(Uri.parse("mailto:" + productEmail));
                         startActivity(Intent.createChooser(emailIntent, "Send email..."));
                     }
                 });

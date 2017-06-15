@@ -1,6 +1,7 @@
 package com.example.android.inventoryapp.data;
 
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 import android.text.TextUtils;
@@ -44,6 +45,10 @@ public final class ProductContract {
                 return true;
             }
             return false;
+        }
+
+        public static Uri currentProductUri(int id){
+            return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 
         public static boolean isImageResourceProvided(String imgResource) {

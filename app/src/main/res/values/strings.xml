@@ -18,6 +18,8 @@
     <string name="supplierInfo">Supplier Info:</string>
     <string name="done">done</string>
     <string name="titleRquired">Product title is required to add new product!</string>
+    <string name="priceRquired">Product price is required to add new product!</string>
+    <string name="quantityRquired">Product quantity is required to add new product!</string>
     <string name="insert_product_successful">Product saved</string>
     <string name="insert_product_failed">Error with saving product</string>
     <string name="edit_product_successful">Product saved</string>

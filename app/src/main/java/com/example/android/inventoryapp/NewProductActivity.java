@@ -70,12 +70,6 @@ public class NewProductActivity extends AppCompatActivity {
         String phoneString = mPhoneEditText.getText().toString().trim();
         String emailString = mEmailEditText.getText().toString().trim();
 
-        if (TextUtils.isEmpty(titleString) && TextUtils.isEmpty(priceString) &&
-                TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(phoneString) &&
-                TextUtils.isEmpty(emailString)) {
-            return;
-        }
-
         ContentValues values = new ContentValues();
 
         if (TextUtils.isEmpty(titleString)){
@@ -84,14 +78,20 @@ public class NewProductActivity extends AppCompatActivity {
         }
         values.put(ProductEntry.COLUMN_PRODUCT_TITLE, titleString);
 
-        double price = 0;
-        if (!TextUtils.isEmpty(priceString)) {
+        double price;
+        if (TextUtils.isEmpty(priceString)){
+            Toast.makeText(this, getString(R.string.priceRquired), Toast.LENGTH_SHORT).show();
+            return;
+        }else {
             price = Double.parseDouble(priceString);
         }
         values.put(ProductEntry.COLUMN_PRODUCT_PRICE, price);
 
-        int quantity = 0;
-        if (!TextUtils.isEmpty(quantityString)) {
+        int quantity;
+        if (TextUtils.isEmpty(quantityString)){
+            Toast.makeText(this, getString(R.string.quantityRquired), Toast.LENGTH_SHORT).show();
+            return;
+        }else {
             quantity = Integer.parseInt(quantityString);
         }
         values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);

@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity implements
         productListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
-                final Uri currentProductUri = ContentUris.withAppendedId(ProductEntry.CONTENT_URI, id);
+                Uri currentProductUri = ContentUris.withAppendedId(ProductEntry.CONTENT_URI, id);
 
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
 
